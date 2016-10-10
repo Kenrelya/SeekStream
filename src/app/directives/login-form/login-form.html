@@ -1,0 +1,15 @@
+<div id="connexion" class="col-md-12">
+    <form novalidate class="form-login">
+        <input class="login-form" type="text" class="form-control" id="login2" ng-model="user.username" placeholder="Nom d'utilisateur">
+        <input class="login-form" type="password" class="form-control" id="pwd" ng-model="user.password" placeholder="Mot de passe">
+        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco" ng-click="connexionUser()">S'identifier</button>
+    </form>
+</div>
+<div id="site-inner">
+  <form novalidate id="register">
+    <p>Ne restez plus dans l'ombre.</br> Inscrivez vous, c'est gratuit.</p>
+        <input class="register-form" type="text" class="form-control" id="login" ng-model="user.username" placeholder="Nom d'utilisateur">
+        <input class="register-form" type="password" class="form-control" id="pwd2" ng-model="user.password" placeholder="Mot de passe">
+        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco2" ng-click="registerUser()">S'identifier</button>
+  </form>
+</div>
