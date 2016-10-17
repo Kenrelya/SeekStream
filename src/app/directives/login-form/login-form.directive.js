@@ -2,9 +2,11 @@ angular.module('seekstream').directive('loginForm', function() {
 	return {
 		restrict: 'E',
 		templateUrl: 'app/directives/login-form/login-form.html',
-		scope: false,
+		scope: false, /*{
+			auth:'='
+		}*/
 		controller: 'LoginFormController',
-		controllerAs: 'vm',
+		controllerAs: 'login',
 		bindToController: true
 	};
 });
