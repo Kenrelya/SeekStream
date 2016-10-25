@@ -1,11 +1,11 @@
-<div id="connexion" class="col-md-12">
+<!-- <div id="connexion" class="col-md-12">
     <form novalidate class="form-login">
         <input class="login-form" type="text" class="form-control" id="login2" ng-model="login.user.username" placeholder="Nom d'utilisateur">
         <input class="login-form" type="password" class="form-control" id="pwd" ng-model="login.user.password" placeholder="Mot de passe">
         <button id="login-submit" type="button" class="btn btn-primary" id ="btnco" ng-click="login.connexionUser()">S'identifier</button>
     </form>
 </div>
-<div class="site-inner" ng-controller="LoginFormController">
+<div class="site-inner">
   <form novalidate id="register">
     <p>Ne restez plus dans l'ombre.</br> Inscrivez vous, c'est gratuit.</p>
         <input class="register-form" type="text" class="form-control" id="login" ng-model="login.user.username" placeholder="Nom d'utilisateur">
@@ -14,4 +14,28 @@
         {{login.user.username}}
         {{login.user.password}}
   </form>
+</div> -->
+
+<div class="top-bar" data-topbar>
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Site Title</li>
+      <li>
+        <a href="#">One</a>
+        <ul class="menu vertical">
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
 </div>
