@@ -119,6 +119,15 @@ body {
   height: 25px;
   font-size: 12px;
 }
+
+.top-bar {
+overflow: hidden;
+height: 70px;
+line-height: 45px;
+position: relative;
+background: #333333;
+margin-bottom: 10px; }
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

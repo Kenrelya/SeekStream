@@ -16,26 +16,57 @@
   </form>
 </div> -->
 
-<div class="top-bar" data-topbar>
+<div class="top-bar" data-topbar style="margin-bottom: 10px;">
   <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Site Title</li>
-      <li>
-        <a href="#">One</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
     <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
+        <li><input type="search" placeholder="Search"></li>
+        <li><button type="button" class="button">Search</button></li>
     </ul>
-  </div>
+
+    </div>
+    <div class="top-bar-right">
+        <form ng-if="!login.current_user" novalidate class="form-inline">
+            <div class="row">
+                <div class="large-4 columns">
+                    <input type="text" 
+                           ng-model="login.user.username" 
+                           placeholder="Nom d'utilisateur"
+                           style="height: 30px;"
+                    >
+                </div>
+                <div class="large-4 columns">
+                    <input type="password" 
+                           ng-model="login.user.password" 
+                           placeholder="Mot de passe"
+                           style="height: 30px;"
+                    >
+                </div>
+                <div class="large-4 columns">
+                    <button role="button"
+                    aria-label="submit form"
+                    class="button"
+                    type="submit" 
+                    ng-click="login.connexionUser()"
+                    >
+                      Connexion
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div ng-if="null !== login.current_user" class="row">
+            <div class="large-3 columns">
+                <h5>{{login.current_user.username}}</h5>
+            </div>
+            <div class="large-9 columns">
+                <button role="button"
+                aria-label="submit form"
+                class="button alert"
+                type="submit" 
+                ng-click="login.logoutCall()"
+                >
+                  Disconnect
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,14 +1,8 @@
 angular.module('seekstream').controller('LoginFormController', function($http, $state, identity) {
     var vm = this;
 
-    // vm.authenticated = false;
-    // vm.identity = new identity.login.get().$promise.then(function(data) {
-    //     vm.authenticated = true;
-    //     vm.current_user = data;
-    // }, function () {
-    //     console.log(vm.identity);
-    // });
-
+    vm.current_user = vm.authenticated;
+    console.log(vm.current_user);
     vm.user = {
         username:"",
         password:""
@@ -21,7 +15,7 @@ angular.module('seekstream').controller('LoginFormController', function($http, $
             },
             vm.successLogin,
             vm.errorLogin);
-      };
+    };
 
     vm.successLogin = function (data) {
         vm.current_user = data;
@@ -42,4 +36,12 @@ angular.module('seekstream').controller('LoginFormController', function($http, $
         console.log("error");
       });
     };
+
+    vm.logoutCall = function () {
+        vm.identity = identity.logout.get().$promise.then(function () {
+            console.log('Logged out');
+            $state.go('home');
+        });
+    }
+
     });

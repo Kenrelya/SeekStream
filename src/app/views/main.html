@@ -1,7 +1,7 @@
 <div class="container">
-
-<login-form></login-form>
-
+<div ng-if="undefined !== main.current_user">
+	<login-form authenticated="main.current_user"></login-form>
+</div>
 <register-form></register-form>
 <!-- exemple de get all users -->
 <p>
