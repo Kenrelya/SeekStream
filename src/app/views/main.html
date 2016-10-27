@@ -2,15 +2,28 @@
 <div ng-if="undefined !== main.current_user">
 	<login-form authenticated="main.current_user"></login-form>
 </div>
-<register-form></register-form>
-<!-- exemple de get all users -->
-<p>
-{{main.all_users}}
-</p>
-<!-- exemple de get one user -->
-<p>
-{{main.one_guy}}
-</p>
+
+<div class="site-inner">
+  <form novalidate id="register">
+    <p>Ne restez plus dans l'ombre.</br> Inscrivez vous, c'est gratuit.</p>
+        <input class="register-form" type="text" class="form-control" id="login" ng-model="login.user.username" placeholder="Nom d'utilisateur">
+        <input class="register-form" type="password" class="form-control" id="pwd2" ng-model="login.user.password" placeholder="Mot de passe">
+        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco2" ng-click="login.registerUser()">Inscription</button>
+        {{login.user.username}}
+        {{login.user.password}}
+  </form>
+</div>
+
+<ul class="vertical menu" data-accordion-menu>
+  <li>
+    <a href="#">Item 1</a>
+    <ul class="menu vertical nested">
+      <li><a href="#">Item 1A</a></li>
+      <li><a href="#">Item 1B</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Item 2</a></li>
+</ul>
 
 
 </div>

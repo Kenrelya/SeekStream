@@ -10,6 +10,7 @@
 				<div class="column">
     				<img src="//placehold.it/300x300" class="thumbnail" alt="">
   				</div>
+  				<h5>{{profile.data.public_name}}<h5>
 		  	</div>
 		  	<div class="small-9 large-9 columns">
 				<div class="flex-video">
@@ -17,5 +18,15 @@
 				</div>
 		  	</div>
 		</div>
+		<!-- /////////////////////// POSTS ///////////////////// -->
+		<div class="row">
+			<div ng-repeat="post in profile.data.posts">
+				<ul>
+				<p>{{post.title}}</p>
+				<p>{{post.content}}</p>
+				<p>{{post.author}}</p>
+			</div>
+		</div>
 	</div>
 </div>
+
