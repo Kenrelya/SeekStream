@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="image">
+        <img src="//placehold.it/300x300">
+        <span class="title">
+        <h5>{{info.data.public_name}}<h5>
+        </span>
+    </div>
+    <div class="content" ng-if="info.isMine()">
+        <div class="row">
+            <div class="small-12 large-12 columns">
+                <a>Upload Picture...</a>
+            </div>
+            <div class="small-12 large-12 columns">
+                <a ng-click="info.modifyInfos()">Change informations...</a>
+            </div>
+        </div>
+    </div>
+    <div class="action">
+        ABOUT ME
+        <p>Registered since: {{info.data.created_at}}</p>
+        <p>{{info.data.about_me}}</p>
+    </div>
+    <div class="action">
+        MY LINKS
+    </div>
+    <div class="action">
+        TAGS
+    </div>
+</div>

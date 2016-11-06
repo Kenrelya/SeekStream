@@ -4,7 +4,6 @@
 
   angular
     .module('seekstream')
-    .constant('malarkey', malarkey)
     .constant('moment', moment);
 
 })();

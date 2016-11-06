@@ -1,32 +1,48 @@
 <div ng-if="undefined !== profile.current_user">
-	<login-form authenticated="profile.current_user"></login-form>
+    <login-form authenticated="profile.current_user"></login-form>
 </div>
 
-<div class="row">
-	<!-- //////////////// Main Profile //////////////////// -->
-	<div class="small-11 small-centered columns">
-		<div class="row">
-		  	<div class="small-3 large-3 columns">
-				<div class="column">
-    				<img src="//placehold.it/300x300" class="thumbnail" alt="">
-  				</div>
-  				<h5>{{profile.data.public_name}}<h5>
-		  	</div>
-		  	<div class="small-9 large-9 columns">
-				<div class="flex-video">
-		        	<iframe width="420" height="315" src="//www.youtube.com/embed/HJ0onJKSITA" frameborder="0" allowfullscreen></iframe>
-				</div>
-		  	</div>
-		</div>
-		<!-- /////////////////////// POSTS ///////////////////// -->
-		<div class="row">
-			<div ng-repeat="post in profile.data.posts">
-				<ul>
-				<p>{{post.title}}</p>
-				<p>{{post.content}}</p>
-				<p>{{post.author}}</p>
-			</div>
-		</div>
-	</div>
-</div>
+<!-- <div class="row"> -->
+    <!-- //////////////// Main Profile //////////////////// -->
+    <!-- <div class="small-11 small-centered columns"> -->
+        <div ng-if="profile.data" class="row">
+            <!-- /////// USER INFOS //////// -->
+            <div class="small-3 large-3 columns">
+                <div ng-if="profile.current_user" class="column">
+                    <user-infos profileid="profile.data._id" currentuserid="profile.current_user.profile._id"></user-infos>
+                    <!-- <img src="//placehold.it/300x300" class="thumbnail" alt=""> -->
+
+                </div>
+            </div>
+            <!-- ///// MAIN PROFILE  /////////-->
+            <div class="small-7 large-7 columns">
+                <div class="flex-video">
+                    <iframe width="420" height="315" src="//www.youtube.com/embed/HJ0onJKSITA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- ///////// POSTS ///////// -->
+                <div ng-if="profile.data">
+                    <display-posts profileid="profile.data._id"></display-posts>
+                </div>
+            </div>
+            <div class="small-2 large-2 columns">
+                <div class="column">
+                    <h5>Follows</h5>
+                    <div class="card">
+                        <div class="image">
+                            <img src="//placehold.it/300x300">
+                            <span class="title">
+                            <h5>{{profile.data.public_name}}<h5>
+                            </span>
+                        </div>
+                        <div class="content" ng-if="profile.isMine()">
+                            CONTACT NAME
+                        </div>
+                    </div>
+                    <!-- <img src="//placehold.it/300x300" class="thumbnail" alt=""> -->
+
+                </div>
+            </div>
+        </div>
+
+
 

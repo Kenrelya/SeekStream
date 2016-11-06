@@ -14,21 +14,23 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
-      .state('register', {
-        url: '/',
-        templateUrl: 'app/views/register.html',
-        controller: 'RegisterController',
-        controllerAs: 'register'
+      .state('informations', {
+        url: '/infos/:type', // type = Modify ou register
+        templateUrl: 'app/views/informations.html',
+        controller: 'InformationsController',
+        controllerAs: 'info'
       })
       .state('profile', {
-        url: '/profile',
+        url: '/profile/:user_id',
         templateUrl: 'app/views/profile.html',
         controller: 'ProfileController',
-        controllerAs: 'profile',
-        params:
-        {
-          user_profile: null
-        }
+        controllerAs: 'profile'
+      })
+      .state('search', {
+        url: '/search?query',
+        templateUrl: 'app/views/search.html',
+        controller: 'SearchController',
+        controllerAs: 'search'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -1,19 +1,36 @@
-angular.module('seekstream').controller('ProfileController', function (profile, identity) {
-	var vm = this;
+angular.module('seekstream').controller('ProfileController', function ($state, Profile, Posts, Identity, Users) {
+    var vm = this;
 
-    vm.identity = identity.login.get().$promise.then(function(data) {
-        vm.authenticated = true;
+    vm.identity = Identity.login.get().$promise.then(function(data) {
         vm.current_user = data;
     }, function () {
-    	vm.current_user = null;
+        vm.current_user = null;
     });
 
-	vm.error = "Une erreur est survenue";
-	profile.self.get({}, function(data) {
-		vm.data = data;
-        console.log(vm.profile);
-	}, function(err) {
-		vm.error = "une erreur est survenue:" + err;
-	})
+    vm.new_public_name = {
+        content: null
+    };
+
+    if ($state.params.user_id !== null) {
+        Profile.one.get({user_id: $state.params.user_id}, function(data) {
+            vm.data = data;
+        }, errorCbk);
+    } else {
+        Profile.self.get({}, function(data) {
+            vm.data = data;
+            console.log(vm.data);
+        },
+        errorCbk
+        );
+    }
+
+    var errorCbk = function(err) {
+        vm.error = "une erreur est survenue:" + err;
+    };
+
+    var test = function () {
+        var popup = new Foundation.Reveal($('#popup-modal'));
+        popup.open();
+    };
 
 });

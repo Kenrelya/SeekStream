@@ -6,24 +6,13 @@
 <div class="site-inner">
   <form novalidate id="register">
     <p>Ne restez plus dans l'ombre.</br> Inscrivez vous, c'est gratuit.</p>
-        <input class="register-form" type="text" class="form-control" id="login" ng-model="login.user.username" placeholder="Nom d'utilisateur">
-        <input class="register-form" type="password" class="form-control" id="pwd2" ng-model="login.user.password" placeholder="Mot de passe">
-        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco2" ng-click="login.registerUser()">Inscription</button>
-        {{login.user.username}}
-        {{login.user.password}}
+        <input class="register-form" type="text" class="form-control" id="login" ng-model="main.new_account.username" placeholder="Nom d'utilisateur">
+        <input class="register-form" type="password" class="form-control" id="pwd2" ng-model="main.new_account.password" placeholder="Mot de passe">
+        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco2" ng-click="main.registerUser()">Inscription</button>
+        {{main.new_account.username}}
+        {{main.new_account.password}}
   </form>
 </div>
-
-<ul class="vertical menu" data-accordion-menu>
-  <li>
-    <a href="#">Item 1</a>
-    <ul class="menu vertical nested">
-      <li><a href="#">Item 1A</a></li>
-      <li><a href="#">Item 1B</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Item 2</a></li>
-</ul>
 
 
 </div>

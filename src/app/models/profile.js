@@ -1,4 +1,4 @@
-angular.module('seekstream').factory('profile', function ($resource) {
+angular.module('seekstream').factory('Profile', function ($resource) {
 	return {
 		self: $resource('http://localhost:5000/profile/'),
 		one: $resource('http://localhost:5000/profile/:user_id'),
