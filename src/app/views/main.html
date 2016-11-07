@@ -1,16 +1,18 @@
 <div class="container">
+<div ng-if="undefined !== main.current_user">
+	<login-form authenticated="main.current_user"></login-form>
+</div>
 
-<login-form></login-form>
-
-
-<!-- exemple de get all users -->
-<p>
-{{main.all_users}}
-</p>
-<!-- exemple de get one user -->
-<p>
-{{main.one_guy}}
-</p>
+<div class="site-inner">
+  <form novalidate id="register">
+    <p>Ne restez plus dans l'ombre.</br> Inscrivez vous, c'est gratuit.</p>
+        <input class="register-form" type="text" class="form-control" id="login" ng-model="main.new_account.username" placeholder="Nom d'utilisateur">
+        <input class="register-form" type="password" class="form-control" id="pwd2" ng-model="main.new_account.password" placeholder="Mot de passe">
+        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco2" ng-click="main.registerUser()">Inscription</button>
+        {{main.new_account.username}}
+        {{main.new_account.password}}
+  </form>
+</div>
 
 
 </div>

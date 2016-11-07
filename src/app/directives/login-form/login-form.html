@@ -1,17 +1,59 @@
-<div id="connexion" class="col-md-12">
-    <form novalidate class="form-login">
-        <input class="login-form" type="text" class="form-control" id="login2" ng-model="login.user.username" placeholder="Nom d'utilisateur">
-        <input class="login-form" type="password" class="form-control" id="pwd" ng-model="login.user.password" placeholder="Mot de passe">
-        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco" ng-click="login.connexionUser()">S'identifier</button>
-    </form>
-</div>
-<div class="site-inner" ng-controller="LoginFormController">
-  <form novalidate id="register">
-    <p>Ne restez plus dans l'ombre.</br> Inscrivez vous, c'est gratuit.</p>
-        <input class="register-form" type="text" class="form-control" id="login" ng-model="login.user.username" placeholder="Nom d'utilisateur">
-        <input class="register-form" type="password" class="form-control" id="pwd2" ng-model="login.user.password" placeholder="Mot de passe">
-        <button id="login-submit" type="button" class="btn btn-primary" id ="btnco2" ng-click="login.registerUser()">Inscription</button>
-        {{login.user.username}}
-        {{login.user.password}}
-  </form>
+<div class="top-bar" data-topbar style="margin-bottom: 10px;">
+    <div class="top-bar-left">
+        <div class="row collapse postfix-round">
+            <form>
+                <div class="small-9 columns">
+                    <input type="text" ng-model="login.search_bar.query" placeholder="Search user">
+                </div>
+                <div class="small-3 columns">
+                    <button ng-click="login.goSearch()" class="button postfix" type="submit">Go</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="top-bar-right">
+        <div class="row">
+            <form ng-if="!login.current_user" novalidate class="form-inline">
+            <div class="large-4 columns">
+                <input type="text"
+                       ng-model="login.user.username"
+                       placeholder="Nom d'utilisateur"
+                       style="height: 30px;"
+                >
+            </div>
+            <div class="large-4 columns">
+                <input type="password"
+                       ng-model="login.user.password"
+                       placeholder="Mot de passe"
+                       style="height: 30px;"
+                >
+            </div>
+            <div class="large-4 columns">
+                <button role="button"
+                aria-label="submit form"
+                class="button"
+                type="submit"
+                ng-click="login.connexionUser()"
+                >
+                  Connexion
+                </button>
+            </div>
+            </form>
+            <div ng-if="null !== login.current_user" class="row">
+                <div class="large-3 columns">
+                    <button class="button success" ng-click="login.goHome()" aria-label="Home">{{login.current_user.username}}</button>
+                </div>
+                <div class="large-9 columns">
+                    <button role="button"
+                    aria-label="submit form"
+                    class="button alert"
+                    type="submit"
+                    ng-click="login.logoutCall()"
+                    >
+                      Disconnect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

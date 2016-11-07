@@ -1,0 +1,28 @@
+<form>
+    <div>
+        <label>
+            Post
+            <input placeholder="Titre" ng-model="posts.new_post.title">
+            <textarea placeholder="Ajouter un post" style="resize:none" ng-model="posts.new_post.content"></textarea>
+        </label>
+    </div>
+    <button role="button"
+            aria-label="Ajouter un post"
+            class="button alert"
+            type="submit"
+            ng-click="posts.submitPost()"
+            >
+        Poster sur le profil
+    </button>
+</form>
+<div class="card" ng-repeat="post in posts.data" >
+    <div class="content">
+        <span class="title">{{ post.title }}</span>
+        <p>{{ post.content }}</p>
+    </div>
+    <div class="action">
+        <a href='#'>Comments</a>
+    </div>
+</div>
+
+<h5>{{posts.error}}</h5>

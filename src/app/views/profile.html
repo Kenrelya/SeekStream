@@ -1,0 +1,59 @@
+<div ng-if="undefined !== profile.current_user">
+    <login-form authenticated="profile.current_user"></login-form>
+</div>
+
+<!-- <div class="row"> -->
+    <!-- //////////////// Main Profile //////////////////// -->
+    <!-- <div class="small-11 small-centered columns"> -->
+        <div ng-if="profile.data" class="row">
+            <!-- /////// USER INFOS //////// -->
+            <div class="small-3 large-3 columns">
+                <div ng-if="profile.current_user" class="column">
+                    <user-infos profileid="profile.data._id" currentuserid="profile.current_user.profile._id"></user-infos>
+                    <!-- <img src="//placehold.it/300x300" class="thumbnail" alt=""> -->
+
+                </div>
+            </div>
+            <!-- ///// MAIN PROFILE  /////////-->
+            <div class="small-7 large-7 columns">
+                <div class="card">
+                    <div class="content" ng-if="!profile.isMine()">
+                        Follow this streamer!
+                        <button
+                            class="button"
+                            ng-click="profile.followUser()"
+                        >Follow</button>
+                    </div>
+                </div>
+                <div class="flex-video">
+                    <iframe width="420" height="315" src="//www.youtube.com/embed/HJ0onJKSITA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- ///////// POSTS ///////// -->
+                <div ng-if="profile.data">
+                    <display-posts profileid="profile.data._id"></display-posts>
+                </div>
+            </div>
+            <div class="small-2 large-2 columns">
+                <div class="column">
+                    <h5>Follows</h5>
+                    <div ng-repeat="contact_follow in profile.data.follow" class="card">
+                        <div class="content">
+                            {{contact_follow.public_name}}
+                        </div>
+                    </div>
+
+
+                    <h5>Followed by</h5>
+                    <div ng-repeat="contact_followed in profile.data.followed_by" class="card">
+                        <div class="content">
+                            {{contact_followed.public_name}}
+                        </div>
+                    </div>
+                    <!-- <img src="//placehold.it/300x300" class="thumbnail" alt=""> -->
+
+                </div>
+            </div>
+        </div>
+
+
+
