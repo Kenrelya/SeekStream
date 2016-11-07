@@ -37,4 +37,8 @@ angular.module('seekstream').controller('LoginFormController', function($http, $
         $state.go('search', {query: vm.search_bar.query});
     }
 
+    vm.goHome = function() {
+        $state.go('home');
+    }
+
     });

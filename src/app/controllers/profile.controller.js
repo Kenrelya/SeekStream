@@ -24,13 +24,14 @@ angular.module('seekstream').controller('ProfileController', function ($state, P
         );
     }
 
+    vm.followUser = function() {
+        Profile.follow.save({followed_user_id: $state.params.user_id}, {}, function() {
+            console.log('follow successful');
+        },
+        errorCbk);
+    }
+
     var errorCbk = function(err) {
         vm.error = "une erreur est survenue:" + err;
     };
-
-    var test = function () {
-        var popup = new Foundation.Reveal($('#popup-modal'));
-        popup.open();
-    };
-
 });

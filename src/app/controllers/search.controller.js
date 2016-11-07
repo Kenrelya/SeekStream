@@ -21,5 +21,9 @@ angular.module('seekstream').controller('SearchController', function ($scope, $s
     	})
     }
 
+    vm.goProfile = function(profileid) {
+        $state.go('profile', {user_id: profileid});
+    }
+
     vm.querySearch(vm.query);
 });

@@ -4,7 +4,7 @@ angular.module('seekstream').factory('Informations', function ($resource) {
         {
 			'update': {method: 'PUT'}
 		}),
-        one: $resource('http://localhost:5000/informations/:profile_id', null,
+        one: $resource('http://localhost:5000/informations/:user_id', null,
 		{
 			'update': {method: 'PUT'}
 		})

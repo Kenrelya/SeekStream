@@ -9,7 +9,8 @@ angular.module('seekstream').controller('UserInfosController', function ($state,
             vm.error = err;
         });
     } else {
-        Informations.one.get({ profile_id: vm.profileid }).$promise.then(function(data) {
+        console.log( 'hey');
+        Informations.one.get({ user_id: $state.params.user_id }).$promise.then(function(data) {
             vm.data = data;
         }, function(err) {
             vm.error = err;
