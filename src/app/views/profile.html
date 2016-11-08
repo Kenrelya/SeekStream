@@ -16,13 +16,13 @@
             </div>
             <!-- ///// MAIN PROFILE  /////////-->
             <div class="small-7 large-7 columns">
-                <div class="card">
-                    <div class="content" ng-if="!profile.isMine()">
-                        Follow this streamer!
-                        <button
-                            class="button"
+                <div class="callout clearfix" ng-if="!profile.isMine()">
+                    <div class="content">
+                        <h5>Follow this streamer!</h5>
+                        <a
+                            class="button float-right"
                             ng-click="profile.followUser()"
-                        >Follow</button>
+                        >Follow</a>
                     </div>
                 </div>
                 <div class="flex-video">
@@ -30,22 +30,21 @@
                 </div>
                 <!-- ///////// POSTS ///////// -->
                 <div ng-if="profile.data">
-                    <display-posts profileid="profile.data._id"></display-posts>
+                    <display-posts currentuserid="profile.current_user.profile._id" profileid="profile.data._id" profileuserid="profile.data._id"></display-posts>
                 </div>
             </div>
             <div class="small-2 large-2 columns">
                 <div class="column">
                     <h5>Follows</h5>
-                    <div ng-repeat="contact_follow in profile.data.follow" class="card">
-                        <div class="content">
+                    <div ng-repeat="contact_follow in profile.data.follow" class="card" >
+                        <div class="content" ng-click="profile.goProfile(contact_follow.contact_id)">
                             {{contact_follow.public_name}}
                         </div>
                     </div>
-
-
+                    <br />
                     <h5>Followed by</h5>
                     <div ng-repeat="contact_followed in profile.data.followed_by" class="card">
-                        <div class="content">
+                        <div class="content" ng-click="profile.goProfile(contact_followed.contact_id)">
                             {{contact_followed.public_name}}
                         </div>
                     </div>
