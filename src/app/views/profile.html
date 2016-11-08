@@ -16,13 +16,13 @@
             </div>
             <!-- ///// MAIN PROFILE  /////////-->
             <div class="small-7 large-7 columns">
-                <div class="card">
-                    <div class="content" ng-if="!profile.isMine()">
-                        Follow this streamer!
-                        <button
-                            class="button"
+                <div class="callout clearfix" ng-if="!profile.isMine()">
+                    <div class="content">
+                        <h5>Follow this streamer!</h5>
+                        <a
+                            class="button float-right"
                             ng-click="profile.followUser()"
-                        >Follow</button>
+                        >Follow</a>
                     </div>
                 </div>
                 <div class="flex-video">

@@ -31,6 +31,13 @@ angular.module('seekstream').controller('ProfileController', function ($state, P
         errorCbk);
     }
 
+    vm.isMine = function() {
+        if (vm.current_user.profile._id === vm.data._id) {
+            return true;
+        }
+        return false;
+    }
+
     var errorCbk = function(err) {
         vm.error = "une erreur est survenue:" + err;
     };

@@ -1,9 +1,8 @@
 <form>
     <div>
         <label>
-            Post
-            <input placeholder="Titre" ng-model="posts.new_post.title">
-            <textarea placeholder="Ajouter un post" style="resize:none" ng-model="posts.new_post.content"></textarea>
+            <input placeholder="Title" ng-model="posts.new_post.title">
+            <textarea placeholder="Post on profile" style="resize:none" ng-model="posts.new_post.content"></textarea>
         </label>
     </div>
     <button role="button"
@@ -19,6 +18,7 @@
     <div class="content">
         <span class="title">{{ post.title }}</span>
         <p>{{ post.content }}</p>
+        <p>From: {{ post.author }}</p>
     </div>
     <div class="action">
         <a href='#'>Comments</a>
