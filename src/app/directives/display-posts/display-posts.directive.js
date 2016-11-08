@@ -3,7 +3,8 @@ angular.module('seekstream').directive('displayPosts', function() {
 		restrict: 'E',
 		templateUrl: 'app/directives/display-posts/display-posts.html',
 		scope: {
-			profileid: '='
+			profileid: '=',
+			currentuserid: '='
 		},
 		controller: 'DisplayPostsController',
 		controllerAs: 'posts',

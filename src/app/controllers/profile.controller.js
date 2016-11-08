@@ -38,6 +38,11 @@ angular.module('seekstream').controller('ProfileController', function ($state, P
         return false;
     }
 
+    vm.goProfile = function(user_profile) {
+        console.log(user_profile);
+        $state.go('profile', {user_id: user_profile});
+    }
+
     var errorCbk = function(err) {
         vm.error = "une erreur est survenue:" + err;
     };

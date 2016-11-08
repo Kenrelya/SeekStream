@@ -16,7 +16,12 @@ angular.module('seekstream').controller('DisplayPostsController', function (Post
             title: vm.new_post.title,
             content: vm.new_post.content
         };
-        Posts.self.save(vm.send_post, vm.successCbk, vm.errorCbk);
+
+        if (vm.currentuserid === vm.profileid) {
+            Posts.self.save(vm.send_post, vm.successCbk, vm.errorCbk);
+        } else {
+            Posts.one.save(vm.send_post, {user_id: vm.profileuserid}, vm.successCbk, vm.errorCbk);
+        }
     }
 
     vm.successCbk = function () {

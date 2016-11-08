@@ -30,29 +30,30 @@
             </div>
             <div class="large-4 columns">
                 <button role="button"
-                aria-label="submit form"
-                class="button"
-                type="submit"
-                ng-click="login.connexionUser()"
+                        aria-label="submit form"
+                        class="button"
+                        type="submit"
+                        ng-click="login.connexionUser()"
                 >
                   Connexion
                 </button>
             </div>
             </form>
             <div ng-if="null !== login.current_user" class="row">
-                <div class="large-3 columns">
-                    <button class="button success" ng-click="login.goHome()" aria-label="Home">{{login.current_user.username}}</button>
-                </div>
-                <div class="large-9 columns">
-                    <button role="button"
-                    aria-label="submit form"
-                    class="button alert"
-                    type="submit"
-                    ng-click="login.logoutCall()"
-                    >
-                      Disconnect
-                    </button>
-                </div>
+                <button class="button success"
+                        ng-click="login.goHome()"
+                        aria-label="Home"
+                >
+                    {{login.current_user.username}}
+                </button>
+                <button role="button"
+                        aria-label="submit form"
+                        class="button alert"
+                        type="submit"
+                        ng-click="login.logoutCall()"
+                >
+                    Disconnect
+                </button>
             </div>
         </div>
     </div>
