@@ -1,3 +1,14 @@
-<div class="flex-video" ng-if="stream.twitch_online">
+<div ng-if="stream.loading">
+	<h4>
+		<i class="fa fa-gear fa-spin"></i>
+		Loading main stream...
+	</h4>
+</div>
+
+<div ng-if="!stream.loading && !stream.twitch_online">
+	<h4>This user is not live.</h4>
+</div>
+
+<div class="flex-video" ng-if="stream.twitch_online === true">
         <iframe ng-src="{{stream.streams}}" frameborder="0" scrolling="no" height="378" width="620"></iframe>
 </div>
