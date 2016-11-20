@@ -6,6 +6,7 @@
     <!-- //////////////// Main Profile //////////////////// -->
     <!-- <div class="small-11 small-centered columns"> -->
         <div ng-if="profile.data" class="row">
+
             <!-- /////// USER INFOS //////// -->
             <div class="small-3 large-3 columns">
                 <div ng-if="profile.current_user" class="column">
@@ -14,9 +15,12 @@
 
                 </div>
             </div>
+
             <!-- ///// MAIN PROFILE  /////////-->
             <div class="small-7 large-7 columns">
-                <div class="callout clearfix" ng-if="!profile.isMine()">
+
+                <!-- ////// Follow this user ////// -->
+                <div class="callout clearfix" ng-if="!profile.isMine() && profile.follow_already !== true">
                     <div class="content">
                         <h5>Follow {{profile.user_infos.public_name}} !</h5>
                         <a
@@ -25,17 +29,19 @@
                         >Follow</a>
                     </div>
                 </div>
-                <div class="flex-video" ng-if="profile.streams">
-                  <iframe ng-src="{{profile.streams}}" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+
+                <!-- ///////// MAIN STREAM VIDEO ///////// -->
+                <div ng-if="profile.user_infos.twitch_username || profile.user_infos.hitbox_username">
+                    <main-stream userinfos="profile.user_infos"></main-stream>
                 </div>
-                <div ng-if="!profile.streams">
-                  This user doesn't have a twitch account
-                </div>
+
                 <!-- ///////// POSTS ///////// -->
                 <div ng-if="profile.data">
-                    <display-posts currentuserid="profile.current_user.profile._id" profileid="profile.data._id" profileuserid="profile.data._id"></display-posts>
+                    <display-posts currentuserid="profile.current_user.profile._id" profileid="profile.data._id"></display-posts>
                 </div>
             </div>
+
+            <!-- ///////// FOLLOWER STATUS ///////// -->
             <div class="small-2 large-2 columns">
                 <div class="column">
                     <h5>Follows</h5>
@@ -51,8 +57,6 @@
                             {{contact_followed.public_name}}
                         </div>
                     </div>
-                    <!-- <img src="//placehold.it/300x300" class="thumbnail" alt=""> -->
-
                 </div>
             </div>
         </div>
