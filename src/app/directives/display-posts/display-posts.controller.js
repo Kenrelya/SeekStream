@@ -12,23 +12,20 @@ angular.module('seekstream').controller('DisplayPostsController', function ($sta
         });
     }
 
-    vm.identity = Identity.login.get().$promise.then(function(data) {
-        vm.current_user = data;
-    }, function () {
-        vm.current_user = null;
-    });
-
     vm.submitPost = function () {
         vm.send_post = {
             title: vm.new_post.title,
             content: vm.new_post.content
         };
 
-        if (vm.currentuserid === vm.profileid) {
-            Posts.self.save(vm.send_post, vm.successCbk, vm.errorCbk);
-        } else {
-            Posts.one.save({user_id: vm.profileuserid}, vm.send_post, vm.successCbk, vm.errorCbk);
+        Posts.self.save(vm.send_post, vm.successCbk, vm.errorCbk);
+    }
+
+    vm.isMine = function () {
+        if (vm.profileid === vm.currentuserid) {
+            return true;
         }
+        return false;
     }
 
     vm.successCbk = function () {
@@ -40,7 +37,6 @@ angular.module('seekstream').controller('DisplayPostsController', function ($sta
     vm.errorCbk = function (err) {
         vm.error = "Error creating new post:" + err;
     }
-
 
     vm.getPosts();
 });
