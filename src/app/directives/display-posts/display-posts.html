@@ -22,8 +22,10 @@
         <p>{{ post.content }}</p>
         <p>From: {{ post.author }}</p>
     </div>
-    <div class="action">
-        <a href='#'>Comments</a>
+    <div ng-if="posts.data">
+        <div class="action">
+            <display-comments currentuserid="posts.currentuserid" profileid="posts.profileid" postid="post._id"></display-comments>
+        </div>
     </div>
 </div>
 </br>

@@ -1,0 +1,19 @@
+<form>
+    <label>
+        <textarea placeholder="Comments" style="resize:none" ng-model="comments.new_comment.content"></textarea>
+    </label>
+    <button role="button"
+            aria-label="Ajouter un commentaire"
+            class="button alert send"
+            type="submit"
+            ng-click="comments.submitComment()"
+            >
+        Répondre
+    </button>
+</form>
+<div class="card" ng-repeat="comment in comments.data">
+    <div class="content">
+        <p>From: {{ comment.author }}</p>
+        <p>{{ comment.content }}</p>
+    </div>
+</div>

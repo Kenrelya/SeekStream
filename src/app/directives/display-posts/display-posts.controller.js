@@ -1,4 +1,4 @@
-angular.module('seekstream').controller('DisplayPostsController', function (Posts) {
+angular.module('seekstream').controller('DisplayPostsController', function ($state, Posts, Identity, Informations) {
     var vm = this;
     vm.new_post = {
         content: null
