@@ -1,4 +1,4 @@
-angular.module('seekstream').controller('DisplayPostsController', function (Posts) {
+angular.module('seekstream').controller('DisplayPostsController', function ($state, Posts, Identity, Informations) {
     var vm = this;
     vm.new_post = {
         content: null
@@ -11,6 +11,13 @@ angular.module('seekstream').controller('DisplayPostsController', function (Post
             vm.error = "Error getting profile posts:" + err;
         });
     }
+
+    vm.identity = Identity.login.get().$promise.then(function(data) {
+        vm.current_user = data;
+    }, function () {
+        vm.current_user = null;
+    });
+
     vm.submitPost = function () {
         vm.send_post = {
             title: vm.new_post.title,
@@ -20,7 +27,7 @@ angular.module('seekstream').controller('DisplayPostsController', function (Post
         if (vm.currentuserid === vm.profileid) {
             Posts.self.save(vm.send_post, vm.successCbk, vm.errorCbk);
         } else {
-            Posts.one.save(vm.send_post, {user_id: vm.profileuserid}, vm.successCbk, vm.errorCbk);
+            Posts.one.save({user_id: vm.profileuserid}, vm.send_post, vm.successCbk, vm.errorCbk);
         }
     }
 
@@ -30,7 +37,7 @@ angular.module('seekstream').controller('DisplayPostsController', function (Post
         vm.getPosts();
     }
 
-    vm.errorCbk = function (err) {s
+    vm.errorCbk = function (err) {
         vm.error = "Error creating new post:" + err;
     }
 
