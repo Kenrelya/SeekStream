@@ -4,7 +4,8 @@ angular.module('seekstream').directive('displayPosts', function() {
 		templateUrl: 'app/directives/display-posts/display-posts.html',
 		scope: {
 			profileid: '=',
-			currentuserid: '='
+			currentuserid: '=',
+			twitchusername: '='
 		},
 		controller: 'DisplayPostsController',
 		controllerAs: 'posts',
