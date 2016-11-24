@@ -17,12 +17,7 @@ angular.module('seekstream').controller('DisplayCommentsController', function (C
         vm.send_comment = {
             content: vm.new_comment.content
         };
-
-        if (vm.currentuserid === vm.profileid) {
-            Comments.toPost.save({post_id: vm.postid}, vm.send_comment, vm.successCbk, vm.errorCbk);
-        } else {
-            Comments.one.save(vm.send_comment, vm.successCbk, vm.errorCbk);
-        }
+        Comments.toPost.save({post_id: vm.postid}, vm.send_comment, vm.successCbk, vm.errorCbk);
     }
 
     vm.successCbk = function () {
