@@ -1,3 +1,12 @@
+<div class="callout clearfix" ng-repeat="comment in comments.data">
+    <div class="image" style="float:left; margin-right: 10px">
+        <img src="//placehold.it/50x50">
+    </div>
+        <p>From: {{ comment.author }}</p>
+        <p>{{ comment.content }}</p>
+</div>
+
+<div class="callout clearfix">
 <form>
     <label>
         <textarea placeholder="Comments" style="resize:none" ng-model="comments.new_comment.content"></textarea>
@@ -11,9 +20,4 @@
         Répondre
     </button>
 </form>
-<div class="card" ng-repeat="comment in comments.data">
-    <div class="content">
-        <p>From: {{ comment.author }}</p>
-        <p>{{ comment.content }}</p>
-    </div>
 </div>
