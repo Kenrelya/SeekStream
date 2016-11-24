@@ -45,14 +45,24 @@
             <div class="small-2 large-2 columns">
                 <div class="column">
                     <h5>Follows</h5>
-                    <div ng-repeat="contact_follow in profile.data.follow" class="card" >
-                        <div class="content" ng-click="profile.goProfile(contact_follow.contact_id)">
-                            {{contact_follow.public_name}}
+                    <div class="card">
+                        <div ng-repeat="contact_follow in profile.data.follow">
+                                <div class="image" style="float:left; margin: 10px">
+                                    <img src="//placehold.it/50x50">
+                                </div>
+                            <div class="content" ng-click="profile.goProfile(contact_follow.contact_id)">
+                                {{contact_follow.public_name}}
+                            </div>
                         </div>
                     </div>
                     <br />
                     <h5>Followed by</h5>
-                    <div ng-repeat="contact_followed in profile.data.followed_by" class="card">
+                    <div class="card">
+                        <div ng-repeat="contact_followed in profile.data.followed_by">
+                            <div class="image" style="float:left; margin: 10px">
+                                <img src="//placehold.it/50x50">
+                            </div>
+                        </div>
                         <div class="content" ng-click="profile.goProfile(contact_followed.contact_id)">
                             {{contact_followed.public_name}}
                         </div>

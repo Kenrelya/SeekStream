@@ -7,6 +7,7 @@ angular.module('seekstream').controller('DisplayCommentsController', function (C
     vm.getComments = function () {
         Comments.toPost.query({post_id: vm.postid}, function(comments_data) {
             vm.data = comments_data;
+            console.log(comments_data);
         }, function(err){
             vm.error = "Error getting profile comments:" + err;
         });
