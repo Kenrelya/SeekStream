@@ -1,18 +1,18 @@
 <div ng-if="posts.isMine()">
-    <form>
+    <form id="form_comments">
         <div>
             <label>
-                <input placeholder="Title" ng-model="posts.new_post.title">
-                <textarea placeholder="Post on profile" style="resize:none" ng-model="posts.new_post.content"></textarea>
+                <input placeholder="Title" ng-model="posts.new_post.title" class="input_profil">
+                <textarea placeholder="Post on profile" style="resize:none" ng-model="posts.new_post.content" class="input_profil"></textarea>
             </label>
         </div>
         <button role="button"
                 aria-label="Ajouter un post"
-                class="button alert"
+                class="button alert input_profil"
                 type="submit"
                 ng-click="posts.submitPost()"
                 >
-            Poster sur le profil
+            Post on profile
         </button>
     </form>
 </div>

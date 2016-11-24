@@ -135,6 +135,78 @@ html,body { // for demo only
   background: #FAFAFA;
 }
 
+#change_profil {
+  width: 60%;
+  background-color: white;
+  border: black solid 1px;
+  margin-top: 50px;
+}
+
+.input_profil {
+  width: 50%;
+  margin-left: 25%;
+}
+
+#form_comments {
+  width: 50%;
+  margin-left: 25%;
+  border: black 1px solid;
+  margin-bottom: 15px;
+  background-color: white;
+}
+#form_comments div {
+  margin-top: 5px;
+}
+
+
+#form_comments button {
+  background-color : #333333;
+}
+
+.large-4.columns {
+  margin-top: 5px;
+  padding-right: 0px;
+}
+
+#img_deco {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+#img_connection {
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+}
+
+#img_profile {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+#img_search {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+#title_change_profil {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#btn_change_profil {
+  text-align: center;
+  margin-right: 25%;
+}
+
 .card {
   font-family: 'Roboto', sans-serif;
   overflow: hidden;

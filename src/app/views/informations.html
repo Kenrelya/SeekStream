@@ -1,59 +1,53 @@
 <div ng-if="undefined !== info.current_user">
     <login-form authenticated="info.current_user"></login-form>
 </div>
-<h5>{{info.page_title}}</h5>
-<div class="row">
+<div class="row" id="change_profil">
+<h5  id="title_change_profil">{{info.page_title}}</h5>
     <!-- ///////// REGISTER/MODIFY INFORMATIONS //////// -->
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil">
         <label>
             Public name
             <input type="text" ng-model="info.data.public_name">
         </label>
     </div>
-    <fieldset class="small-12 large-12 columns">
+    <fieldset class="small-12 large-12 columns input_profil">
         <legend>Choose your sex</legend>
         <input type="radio" name="sex" value="male" id="male" ng-model="info.data.sex"><label for="male">Male</label>
         <input type="radio" name="sex" value="female" id="female" ng-model="info.data.sex"><label for="female">Female</label>
     </fieldset>
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil">
         <label>
             E-mail
             <input type="text" ng-model="info.data.mail">
         </label>
     </div>
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil">
         <label>
             Age
             <input type="number" ng-model="info.data.age">
         </label>
     </div>
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil">
         <label>
             About me
             <textarea placeholder="Tell us about yourself" style="resize:none" ng-model="info.data.about_me"></textarea>
         </label>
     </div>
-    <div class="small-12 large-12 columns">
-    <p> If you are registered to either YouTube or Twitch </p>
-        <label>
-            YouTube Username
-            <input type="text" ng-model="info.data.youtube_username">
-        </label>
-    </div>
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil">
+    <p> If you are registered to either Hitbox or Twitch </p>
         <label>
             Twitch Username
             <input type="text" ng-model="info.data.twitch_username">
         </label>
     </div>
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil">
         <label>
             Hitbox Username
             <input type="text" ng-model="info.data.hitbox_username">
         </label>
     </div>
 
-    <div class="small-12 large-12 columns">
+    <div class="small-12 large-12 columns input_profil" id="btn_change_profil">
         <button role="button"
                 aria-label="modify your infos"
                 class="button success"

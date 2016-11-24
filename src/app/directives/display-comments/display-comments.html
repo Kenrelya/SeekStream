@@ -1,8 +1,7 @@
 <div class="callout clearfix" ng-repeat="comment in comments.data">
     <div class="image" style="float:left; margin-right: 10px">
-        <img src="//placehold.it/50x50">
+      {{ comment.author }} :
     </div>
-        <p>From: {{ comment.author }}</p>
         <p>{{ comment.content }}</p>
 </div>
 
@@ -16,8 +15,9 @@
             class="button alert send"
             type="submit"
             ng-click="comments.submitComment()"
+            style="background-color: #333333"
             >
-        Répondre
+        Post
     </button>
 </form>
 </div>
